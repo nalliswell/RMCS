@@ -1,0 +1,20 @@
+rmcs_executor:
+  ros__parameters:
+    update_rate: 1000.0
+    components:
+      - rmcs_core::controller::communication::SignalGenerator -> signal_generator
+      - rmcs_core::controller::communication::SignalProcessor -> signal_processor
+    
+      - rmcs_core::broadcaster::ValueBroadcaster -> signal_broadcaster
+
+signal_generator:
+  ros__parameters:
+    omega: 3.14
+
+signal_broadcaster:
+  ros__parameters:
+    forward_list:
+      - "signal_generator/sin_value"    # 正弦波
+      - "signal_generator/cos_value"    # 余弦波
+      - "signal_processor/sum_output"
+
