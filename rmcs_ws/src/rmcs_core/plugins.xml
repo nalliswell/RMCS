@@ -104,7 +104,7 @@
   <class type="rmcs_core::controller::communication::SignalProcessor" base_class_type="rmcs_executor::Component">
     <description>Test plugin.</description>
   </class>
-  <class type="rmcs_core::hardware::SingleCBoardExample" base_class_type="rmcs_executor::Component">
+    <class type="rmcs_core::hardware::SingleCBoardExample" base_class_type="rmcs_executor::Component">
     <description>Test plugin.</description>
   </class>
   <class type="rmcs_core::example::RemoteControllerExample" base_class_type="rmcs_executor::Component">

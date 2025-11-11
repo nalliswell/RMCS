@@ -3,15 +3,16 @@ rmcs_executor:
     update_rate: 1000.0
     components:
       - rmcs_core::hardware::SingleCBoardExample -> cboard_example
-      - rmcs_core::controller::pid::PidController -> m2006_velocity_controller_right
-      - rmcs_core::controller::pid::PidController -> m2006_velocity_controller_left
+      - rmcs_core::controller::pid::PidController -> m2006_velicity_controller_right
+      - rmcs_core::controller::pid::PidController -> m2006_velicity_controller_left
       - rmcs_core::example::RemoteControllerExample -> controller
+
 
 cboard_example:
   ros__parameters:
     usb_pid: -1
 
-m2006_velocity_controller_right:
+m2006_velicity_controller_right:
   ros__parameters:
     setpoint: /example/m2006_right/control_velocity
     measurement: /example/m2006_right/velocity
@@ -20,7 +21,7 @@ m2006_velocity_controller_right:
     ki: 0.0
     kd: 0.5
 
-m2006_velocity_controller_left:
+m2006_velicity_controller_left:
   ros__parameters:
     setpoint: /example/m2006_left/control_velocity
     measurement: /example/m2006_left/velocity
@@ -31,4 +32,7 @@ m2006_velocity_controller_left:
 
 controller:
   ros__parameters:
-    kp: 0.5
+    kp: 0.8
+
+
+    
